@@ -6,13 +6,7 @@ module.exports = {
   env: {
     node: true
   },
-  extends: [
-    'standard',
-    'prettier',
-    'prettier/standard',
-    'plugin:jest/recommended',
-    'wesbos'
-  ],
+  extends: ['standard', 'wesbos', 'prettier', 'prettier/standard', 'plugin:jest/recommended'],
   plugins: ['prettier', 'jest'],
   rules: {
     'promise/catch-or-return': 'error',
@@ -24,7 +18,6 @@ module.exports = {
       }
     ],
     semi: [2, 'always'],
-    'no-use-before-define': ['error', 'nofunc'],
-    'no-shadow': 0
+    'no-use-before-define': ['error', 'nofunc']
   }
 };
