@@ -1,2 +1,2 @@
-# node-express-starter
-Starter project to develop an API with node and express
+# node-express-mongo-starter
+Starter project to develop an API with node, express and mongo as database
