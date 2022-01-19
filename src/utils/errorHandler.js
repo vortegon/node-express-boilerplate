@@ -31,12 +31,18 @@ export const developmentErrors = (err, req, res, next) => {
   if (err.name === 'ValidationError') {
     err.status = 400;
   }
+
+  if (err.message === 'invalid signature') {
+    err.status = 401;
+  }
+
   err.stack = err.stack || '';
   const errorDetails = {
     message: err.message,
     status: err.status,
     stack: err.stack
   };
+
   res.status(err.status || 500);
   console.log(err);
   res.json({ error: errorDetails });
@@ -51,7 +57,17 @@ export const productionErrors = (err, req, res, next) => {
   if (err.name === 'ValidationError') {
     err.status = 400;
   }
+
+  if (err.message === 'invalid signature') {
+    err.status = 401;
+  }
+
+  const errorDetails = {
+    message: err.message,
+    status: err.status
+  };
+
   res.status(err.status || 500);
   console.log(err);
-  res.json(err.message);
+  res.json({ error: errorDetails });
 };

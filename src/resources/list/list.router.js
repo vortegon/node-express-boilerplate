@@ -7,7 +7,7 @@ const router = Router();
 // /api/list
 router
   .route('/')
-  .get(catchErrors(controllers.getOne))
+  .get(catchErrors(controllers.getMany))
   .post(catchErrors(controllers.createOne));
 
 // /api/list/:id

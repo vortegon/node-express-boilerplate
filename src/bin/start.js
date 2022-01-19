@@ -7,7 +7,7 @@ import { connect } from '../utils/db';
 /**
  * Load environment variables from env file.
  */
-dotenv.config({ path: 'variables.env' });
+dotenv.config();
 
 /**
  * Create HTTP server.
